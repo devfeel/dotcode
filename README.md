@@ -7,32 +7,32 @@ code generater base on dotweb &amp; dotlog &amp; cache &amp; mapper &amp; databa
 
 if run success, it will print:
 ```
-{code path}/main.go
-{code path}/config/config.go
-{code path}/config/model.go
-{code path}/const/const.go
-{code path}/core/cmap.go
-{code path}/core/exception/exception.go
-{code path}/document/demo.MD
-{code path}/global/global.go
-{code path}/protected/config.go
-{code path}/protected/service.go
-{code path}/protected/model/DemoInfo.go
-{code path}/protected/repository/BaseRepository.go
-{code path}/protected/repository/DemoRepository.go
-{code path}/protected/service/BaseService.go
-{code path}/protected/service/demo/DemoService.go
-{code path}/server/router.go
-{code path}/server/server.go
-{code path}/server/contract/ResponseInfo.go
-{code path}/server/handlers/test/default.go
-{code path}/server/handlers/demo/demo.go
-{code path}/server/validate/validate.go
-{code path}/util/file/file.go
-{code path}/util/json/json.go
-{code path}/util/http/http.go
-{code path}/protected/version.yaml
-{code path}/protected/config/develop/app.conf
-{code path}/protected/config/develop/dotlog.conf
-{code path}/protected/config/develop/dotweb.conf
+{code path}/{package name}/main.go
+{code path}/{package name}/config/config.go
+{code path}/{package name}/config/model.go
+{code path}/{package name}/const/const.go
+{code path}/{package name}/core/cmap.go
+{code path}/{package name}/core/exception/exception.go
+{code path}/{package name}/document/demo.MD
+{code path}/{package name}/global/global.go
+{code path}/{package name}/protected/config.go
+{code path}/{package name}/protected/service.go
+{code path}/{package name}/protected/model/DemoInfo.go
+{code path}/{package name}/protected/repository/BaseRepository.go
+{code path}/{package name}/protected/repository/DemoRepository.go
+{code path}/{package name}/protected/service/BaseService.go
+{code path}/{package name}/protected/service/demo/DemoService.go
+{code path}/{package name}/server/router.go
+{code path}/{package name}/server/server.go
+{code path}/{package name}/server/contract/ResponseInfo.go
+{code path}/{package name}/server/handlers/test/default.go
+{code path}/{package name}/server/handlers/demo/demo.go
+{code path}/{package name}/server/validate/validate.go
+{code path}/{package name}/util/file/file.go
+{code path}/{package name}/util/json/json.go
+{code path}/{package name}/util/http/http.go
+{code path}/{package name}/protected/version.yaml
+{code path}/{package name}/protected/config/develop/app.conf
+{code path}/{package name}/protected/config/develop/dotlog.conf
+{code path}/{package name}/protected/config/develop/dotweb.conf
 ```
