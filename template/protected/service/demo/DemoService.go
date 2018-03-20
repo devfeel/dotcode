@@ -1,6 +1,6 @@
 package demo
 
-import "github.com/devfeel/dotcode/template{project}"
+import "github.com/devfeel/dotcode/template"
 
 func init(){
 	template.RegisterTemplate(new(DemoService))
