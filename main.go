@@ -41,6 +41,8 @@ func main(){
 
 	parseFlag()
 
+	fmt.Println("DotCode Current Version:", _const.Version)
+
 	for _,v:=range template.GlobalTemplates{
 		path := CodePath + "/"+v.Path()
 		filename := path + "/"+v.FileName()
