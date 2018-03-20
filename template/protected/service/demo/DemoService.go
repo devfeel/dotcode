@@ -30,7 +30,6 @@ import (
 	"strconv"
 	"github.com/devfeel/dotlog"
 	"github.com/devfeel/cache"
-	"github.com/devfeel/mapper"
 )
 
 var (
