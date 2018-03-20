@@ -1,6 +1,6 @@
 package repository
 
-import "emoney.cn/createcode/template"
+import "github.com/devfeel/dotcode/template"
 
 func init(){
 	template.RegisterTemplate(new(DemoRepository))
@@ -21,8 +21,8 @@ func (t *DemoRepository) String() string {
 	return `package repository
 
 import (
-	"{project}/protected"
-	"{project}/protected/model"
+	"github.com/devfeel/dotweb-start/protected"
+	"github.com/devfeel/dotweb-start/protected/model"
 )
 
 type DemoRepository struct {
@@ -36,18 +36,27 @@ func NewDemoRepository(conf *protected.ServiceConfig) *DemoRepository {
 	return repository
 }
 
-func (repository *DemoRepository) QueryDemoInfo(demoId int) (result map[string]interface{}, err error) {
+func (repository *DemoRepository) QueryDemoInfo(dest interface{}, demoId int) error {
 	sql := "SELECT * FROM [Demo] WITH(NOLOCK) WHERE DemoID = ? "
-	return repository.FindOne(sql, demoId)
+	return repository.FindOne(dest, sql, demoId)
 }
 
-func (repository *DemoRepository) QueryTopDemoList(rowCount int) (result []map[string]interface{}, err error) {
+func (repository *DemoRepository) QueryTopDemoList(dest interface{}, rowCount int) error {
 	sql := "SELECT TOP 10 * FROM [Demo] WITH(NOLOCK)"
-	return repository.FindList(sql)
+	return repository.FindList(dest, sql)
 }
 
 func (repository *DemoRepository) InsertDemo(demo *model.DemoInfo) (n int64, err error) {
 	sql := "INSERT INTO [Demo] ([DemoID], [DemoName]) VALUES(?,?)"
 	return repository.Insert(sql, demo.DemoID, demo.DemoName)
-}`
+}
+
+func (repository *DemoRepository) QueryByPage(dest interface{}, skip, take int)error{
+	fields := "*"
+	tableName := "Demo"
+	where := ""
+	orderBy := "ID ASC, ID DESC"
+	return repository.FindListByPage(dest, tableName, fields, where, orderBy, skip, take)
+}
+`
 }

@@ -1,5 +1,5 @@
 package _const
-import "emoney.cn/createcode/template"
+import "github.com/devfeel/dotcode/template"
 
 func init(){
 	template.RegisterTemplate(new(Const))

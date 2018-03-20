@@ -1,6 +1,6 @@
 package demo
 
-import "emoney.cn/createcode/template"
+import "github.com/devfeel/dotcode/template"
 
 func init(){
 	template.RegisterTemplate(new(DemoService))
@@ -21,14 +21,13 @@ func (t *DemoService) String() string {
 	return `package demo
 
 import (
-	"{project}/const"
-	"{project}/protected"
-	"{project}/protected/model"
-	"{project}/protected/repository"
-	"{project}/protected/service"
+	"github.com/devfeel/dotweb-start/const"
+	"github.com/devfeel/dotweb-start/protected"
+	"github.com/devfeel/dotweb-start/protected/model"
+	"github.com/devfeel/dotweb-start/protected/repository"
+	"github.com/devfeel/dotweb-start/protected/service"
 	"errors"
 	"strconv"
-	"fmt"
 	"github.com/devfeel/dotlog"
 	"github.com/devfeel/cache"
 	"github.com/devfeel/mapper"
@@ -76,14 +75,13 @@ func (service *DemoService) QueryDemoInfo(demoId int) (*model.DemoInfo, error) {
 	var resultMap map[string]interface{}
 	var err error
 	redisKey := RedisKey_DemoInfoID + strconv.Itoa(demoId)
-	fmt.Println(redisKey)
 	//get from redis
 	err = service.RedisCache.GetJsonObj(redisKey, result)
 	if err == nil {
 		return result, nil
 	}
 
-	resultMap, err = service.demoRepository.QueryDemoInfo(demoId)
+	err = service.demoRepository.QueryDemoInfo(result, demoId)
 	if err == nil {
 		if len(resultMap) >0 {
 			//convert to struct
@@ -107,27 +105,14 @@ func (service *DemoService) QueryDemoList(rowNum int) ([]*model.DemoInfo, error)
 		return nil, errors.New("must set rowNum")
 	}
 	var results []*model.DemoInfo
-	var resultMap []map[string]interface{}
 	var err error
-	resultMap, err = service.demoRepository.QueryTopDemoList(rowNum)
+	err = service.demoRepository.QueryTopDemoList(&results, rowNum)
 	if err == nil {
-		if len(resultMap) >0 {
-			for _, m:=range resultMap{
-				result := new(model.DemoInfo)
-				//convert to struct
-				errMapper := mapper.MapperMap(m, result)
-				if errMapper != nil {
-					return nil, errMapper
-				}else{
-					results = append(results, result)
-				}
-			}
-		}else{
+		if len(results) <=0 {
 			results = nil
 			err = errors.New("not exists this demo info")
 		}
 	}
-
 	return results, err
 }
 
