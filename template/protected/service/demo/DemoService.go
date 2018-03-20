@@ -1,6 +1,6 @@
 package demo
 
-import "github.com/devfeel/dotcode/template"
+import "github.com/devfeel/dotcode/template{project}"
 
 func init(){
 	template.RegisterTemplate(new(DemoService))
@@ -21,11 +21,11 @@ func (t *DemoService) String() string {
 	return `package demo
 
 import (
-	"github.com/devfeel/dotweb-start/const"
-	"github.com/devfeel/dotweb-start/protected"
-	"github.com/devfeel/dotweb-start/protected/model"
-	"github.com/devfeel/dotweb-start/protected/repository"
-	"github.com/devfeel/dotweb-start/protected/service"
+	"{project}/const"
+	"{project}/protected"
+	"{project}/protected/model"
+	"{project}/protected/repository"
+	"{project}/protected/service"
 	"errors"
 	"strconv"
 	"github.com/devfeel/dotlog"

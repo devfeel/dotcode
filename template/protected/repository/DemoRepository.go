@@ -21,8 +21,8 @@ func (t *DemoRepository) String() string {
 	return `package repository
 
 import (
-	"github.com/devfeel/dotweb-start/protected"
-	"github.com/devfeel/dotweb-start/protected/model"
+	"{project}/protected"
+	"{project}/protected/model"
 )
 
 type DemoRepository struct {
