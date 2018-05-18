@@ -10,7 +10,7 @@ func init(){
 type Demo struct{}
 
 func(t *Demo) Path() string{
-	return "task/tasks/demo"
+	return "task/tasks"
 }
 
 func (t *Demo) FileName() string{
