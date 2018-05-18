@@ -23,6 +23,7 @@ func (t *Global) String() string{
 import (
 	"github.com/devfeel/dotweb"
 	"github.com/devfeel/dotlog"
+	"github.com/devfeel/dottask"
 	"{project}/const"
 	"errors"
 	"{project}/core"
@@ -31,6 +32,7 @@ import (
 //全局map
 var GlobalItemMap *core.CMap
 var DotApp *dotweb.DotWeb
+var DotTask *task.TaskService
 var InnerLogger dotlog.Logger
 
 func Init(configPath string) error{

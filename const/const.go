@@ -2,4 +2,4 @@ package _const
 
 const ReplaceFlag_Project = "{project}"
 
-const Version = "0.2"
+const Version = "0.3"
