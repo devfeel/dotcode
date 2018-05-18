@@ -1,5 +1,9 @@
 # dotcode
 
+#### version 0.3
+* 增加Task模块
+* 2018-05-18 17:00
+
 #### version 0.2
 * 更新database处理模块
 * 修正package bug

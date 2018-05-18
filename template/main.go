@@ -32,6 +32,7 @@ import (
 	"{project}/config"
 	"{project}/server"
 	"{project}/global"
+	"{project}/task"
 )
 
 var (
@@ -76,6 +77,9 @@ func main() {
 		fmt.Println("protected.InitConfig失败 " + err.Error())
 		return
 	}
+
+	//启动Task Service
+	task.StartTaskService(configPath)
 
 	//监听系统信号
 	//go listenSignal()

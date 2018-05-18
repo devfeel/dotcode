@@ -18,6 +18,8 @@ import (
 	_ "github.com/devfeel/dotcode/template/server/handlers/test"
 	_ "github.com/devfeel/dotcode/template/server/handlers/demo"
 	_ "github.com/devfeel/dotcode/template/server/validate"
+	_ "github.com/devfeel/dotcode/template/task"
+	_ "github.com/devfeel/dotcode/template/task/tasks"
 	_ "github.com/devfeel/dotcode/template/util/file"
 	_ "github.com/devfeel/dotcode/template/util/json"
 	_ "github.com/devfeel/dotcode/template/util/http"
