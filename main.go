@@ -23,6 +23,8 @@ import (
 	_ "github.com/devfeel/dotcode/template/util/file"
 	_ "github.com/devfeel/dotcode/template/util/json"
 	_ "github.com/devfeel/dotcode/template/util/http"
+	_ "github.com/devfeel/dotcode/template/util/rsa"
+	_ "github.com/devfeel/dotcode/template/util/time"
 	_ "github.com/devfeel/dotcode/template/resources"
 	_ "github.com/devfeel/dotcode/template/resources/config/develop"
 

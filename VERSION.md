@@ -1,5 +1,9 @@
 # dotcode
 
+#### version 0.4
+* add util/time, util/rsa module
+* 2018-09-10 12:00
+
 #### version 0.3
 * 增加Task模块
 * 2018-05-18 17:00
