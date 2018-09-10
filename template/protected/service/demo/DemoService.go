@@ -28,6 +28,7 @@ import (
 	"{project}/protected/service"
 	"errors"
 	"strconv"
+	"database/sql"
 	"github.com/devfeel/dotlog"
 	"github.com/devfeel/cache"
 )
